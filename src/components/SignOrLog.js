@@ -17,16 +17,20 @@ const SignOrLog = ({ setter }) => {
  };
 
   return (
-    <><form onSubmit={signUpHandler}>
+    <div>
+      <p>Sign up here</p>
+    <form onSubmit={signUpHandler}>
       <input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
       <input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
       <input placeholder="password" onChange={(e) => setPassword(e.target.value)} />
       <button type="submit">Submit</button>
+      <p>Log in here</p>
     </form><form onSubmit={loginHandler}>
         <input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
         <input placeholder="password" onChange={(e) => setPassword(e.target.value)} />
         <button type="submit">Submit</button>
-      </form></>
+      </form>
+      </div>
   );
 };
 
