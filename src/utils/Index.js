@@ -32,4 +32,3 @@ export const login = async (username, password, setter) => {
     console.log(error);
   }
 };
-

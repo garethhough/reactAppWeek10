@@ -8,29 +8,32 @@ const SignOrLog = ({ setter }) => {
   const [password, setPassword] = useState();
 
   const signUpHandler = async (e) => {
-     e.preventDefault();
+    e.preventDefault();
     await signUp(username, email, password, setter);
   };
   const loginHandler = async (e) => {
     e.preventDefault();
-   await login(username, password, setter);
- };
+    await login(username, password, setter);
+  };
 
   return (
     <div>
       <p>Sign up here</p>
-    <form onSubmit={signUpHandler}>
-      <input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-      <input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
-      <input placeholder="password" onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Submit</button>
-      <p>Log in here</p>
-    </form><form onSubmit={loginHandler}>
-        <input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
-        <input placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+      <form onSubmit={signUpHandler}>
+        <input
+          placeholder="username"
+          onChange={(e) => setUsername(e.target.value)}/>
+        <input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
+        <input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
         <button type="submit">Submit</button>
       </form>
-      </div>
+      <p>Log in here</p>
+      <form onSubmit={loginHandler}>
+        <input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+        <input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 
